@@ -1,0 +1,77 @@
+html,
+body{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    .chessContainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        .chessBoard {
+            display: flex;
+            flex-flow: column nowrap;
+
+            .chessLine{
+                display: flex;
+                flex-flow: row nowrap;
+
+                .case {
+                    width: 80px;
+                    height: 80px;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                }
+
+                .case0{
+                    background-color: coral;
+                }
+
+                .case1 {
+                    background-color: bisque;
+                }
+
+                .poolB{
+                    background-image: url("../../ressources/pieces/Chess_pdt60.png");
+                }
+
+                .poolW{
+                    background-image: url("../../ressources/pieces/Chess_plt60.png");
+                }
+
+                .bishopB{
+                    background-image: url("../../ressources/pieces/Chess_bdt60.png");
+                }
+
+                .bishopW{
+                    background-image: url("../../ressources/pieces/Chess_blt60.png");
+                }
+
+                .kingB{
+                    background-image: url("../../ressources/pieces/Chess_kdt60.png");
+                }
+
+                .kingW{
+                    background-image: url("../../ressources/pieces/Chess_klt60.png");
+                }
+
+                .queenB{
+                    background-image: url("../../ressources/pieces/Chess_qdt60.png");
+                }
+
+                .queenW{
+                    background-image: url("../../ressources/pieces/Chess_qlt60.png");
+                }
+
+                .rookB {
+                    background-image: url("../../ressources/pieces/Chess_rdt60.png");
+                }
+
+                .rookW{
+                    background-image: url("../../ressources/pieces/Chess_rlt60.png");
+                }
+            }
+        }
+    }
+}

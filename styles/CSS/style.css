@@ -1,0 +1,79 @@
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+html .chessContainer,
+body .chessContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+html .chessContainer .chessBoard,
+body .chessContainer .chessBoard {
+  display: flex;
+  flex-flow: column nowrap;
+}
+html .chessContainer .chessBoard .chessLine,
+body .chessContainer .chessBoard .chessLine {
+  display: flex;
+  flex-flow: row nowrap;
+}
+html .chessContainer .chessBoard .chessLine .case,
+body .chessContainer .chessBoard .chessLine .case {
+  width: 80px;
+  height: 80px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+html .chessContainer .chessBoard .chessLine .case0,
+body .chessContainer .chessBoard .chessLine .case0 {
+  background-color: coral;
+}
+html .chessContainer .chessBoard .chessLine .case1,
+body .chessContainer .chessBoard .chessLine .case1 {
+  background-color: bisque;
+}
+html .chessContainer .chessBoard .chessLine .poolB,
+body .chessContainer .chessBoard .chessLine .poolB {
+  background-image: url("../../ressources/pieces/Chess_pdt60.png");
+}
+html .chessContainer .chessBoard .chessLine .poolW,
+body .chessContainer .chessBoard .chessLine .poolW {
+  background-image: url("../../ressources/pieces/Chess_plt60.png");
+}
+html .chessContainer .chessBoard .chessLine .bishopB,
+body .chessContainer .chessBoard .chessLine .bishopB {
+  background-image: url("../../ressources/pieces/Chess_bdt60.png");
+}
+html .chessContainer .chessBoard .chessLine .bishopW,
+body .chessContainer .chessBoard .chessLine .bishopW {
+  background-image: url("../../ressources/pieces/Chess_blt60.png");
+}
+html .chessContainer .chessBoard .chessLine .kingB,
+body .chessContainer .chessBoard .chessLine .kingB {
+  background-image: url("../../ressources/pieces/Chess_kdt60.png");
+}
+html .chessContainer .chessBoard .chessLine .kingW,
+body .chessContainer .chessBoard .chessLine .kingW {
+  background-image: url("../../ressources/pieces/Chess_klt60.png");
+}
+html .chessContainer .chessBoard .chessLine .queenB,
+body .chessContainer .chessBoard .chessLine .queenB {
+  background-image: url("../../ressources/pieces/Chess_qdt60.png");
+}
+html .chessContainer .chessBoard .chessLine .queenW,
+body .chessContainer .chessBoard .chessLine .queenW {
+  background-image: url("../../ressources/pieces/Chess_qlt60.png");
+}
+html .chessContainer .chessBoard .chessLine .rookB,
+body .chessContainer .chessBoard .chessLine .rookB {
+  background-image: url("../../ressources/pieces/Chess_rdt60.png");
+}
+html .chessContainer .chessBoard .chessLine .rookW,
+body .chessContainer .chessBoard .chessLine .rookW {
+  background-image: url("../../ressources/pieces/Chess_rlt60.png");
+}

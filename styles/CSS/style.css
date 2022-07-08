@@ -37,12 +37,12 @@ html .chessContainer .chessBoard .chessLine .case1,
 body .chessContainer .chessBoard .chessLine .case1 {
   background-color: bisque;
 }
-html .chessContainer .chessBoard .chessLine .poolB,
-body .chessContainer .chessBoard .chessLine .poolB {
+html .chessContainer .chessBoard .chessLine .pawnB,
+body .chessContainer .chessBoard .chessLine .pawnB {
   background-image: url("../../ressources/pieces/Chess_pdt60.png");
 }
-html .chessContainer .chessBoard .chessLine .poolW,
-body .chessContainer .chessBoard .chessLine .poolW {
+html .chessContainer .chessBoard .chessLine .pawnW,
+body .chessContainer .chessBoard .chessLine .pawnW {
   background-image: url("../../ressources/pieces/Chess_plt60.png");
 }
 html .chessContainer .chessBoard .chessLine .bishopB,

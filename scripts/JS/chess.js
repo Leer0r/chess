@@ -1,41 +1,59 @@
-function createChessPlate(w, h) {
-}
-var chessPlate = /** @class */ (function () {
-    function chessPlate() {
+import { createPiece } from "./pieces.js";
+class chessPlate {
+    constructor() {
         this.chessSize = {
             h: 8,
             w: 8
         };
-        this.chessBoardHTML = new Array;
+        this.chessBoard = new Array;
+        for (let width = 0; width < this.chessSize.w; width++) {
+            this.chessBoard[width] = new Array;
+            for (let heigth = 0; heigth < this.chessSize.w; heigth++) {
+                this.chessBoard[width][heigth] = null;
+            }
+        }
         this.chessContainer = document.querySelector(".chessContainer");
         this.createChessPlate(this.chessSize.w, this.chessSize.h);
     }
-    chessPlate.prototype.createChessPlate = function (x, y) {
-        var _a;
-        var chessBoard = document.createElement("div");
+    addNewPiece(x, y, pieceToCreate, options) {
+        this.chessBoard[x][y] = createPiece(pieceToCreate, options);
+    }
+    createChessPlate(x, y) {
+        const chessBoard = document.createElement("div");
         chessBoard.classList.add("chessBoard");
-        for (var width = 0; width < this.chessSize.w; width++) {
-            var chessLine = document.createElement("div");
+        for (let width = 0; width < this.chessSize.w; width++) {
+            const chessLine = document.createElement("div");
             chessLine.classList.add("chessLine");
-            for (var height = 0; height < this.chessSize.h; height++) {
-                var chessCase = document.createElement("div");
-                chessCase.classList.add("case", "case" + (width + height) % 2);
-                if (width == 1) { //Black pawn
-                    chessCase.classList.add("pawnB");
-                }
-                else if (width == this.chessSize.w - 2) { //White pawn
-                    chessCase.classList.add("pawnW");
+            for (let height = 0; height < this.chessSize.h; height++) {
+                const chessCase = document.createElement("div");
+                chessCase.classList.add("case", `case${(width + height) % 2}`);
+                if (width == 1 || width == this.chessSize.w - 2) { //Black pawn
+                    if (width == 1) {
+                        chessCase.classList.add("pawnB");
+                    }
+                    else { //White pawn
+                        chessCase.classList.add("pawnW");
+                    }
+                    this.addNewPiece(width, height, "pawn", {
+                        HTMLLink: chessCase,
+                        position: { x: width, y: height },
+                        side: (width + height) % 2
+                    });
                 }
                 else if (width == 0) { //First rage of pown
                 }
                 else if (width == this.chessSize.w - 1) {
                 }
+                chessCase.addEventListener("click", () => {
+                    if (this.chessBoard[width][height] != null) {
+                        this.chessBoard[width][height].clicked();
+                    }
+                });
                 chessLine.appendChild(chessCase);
             }
             chessBoard.appendChild(chessLine);
         }
-        (_a = this.chessContainer) === null || _a === void 0 ? void 0 : _a.appendChild(chessBoard);
-    };
-    return chessPlate;
-}());
-var plate = new chessPlate();
+        this.chessContainer?.appendChild(chessBoard);
+    }
+}
+const plate = new chessPlate();

@@ -1,71 +1,48 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var piece = /** @class */ (function () {
-    function piece(init) {
+export class piece {
+    constructor(init) {
         this.position = init.position;
         this.side = init.side;
         this.playableCase = new Array;
+        this.HTMLLink = init.HTMLLink;
     }
-    piece.prototype.play = function (newPosition) {
+    play(newPosition) {
         if (newPosition < this.playableCase.length || newPosition >= 0) {
             this.position = this.playableCase[newPosition];
         }
-    };
-    piece.prototype.playPos = function (newPosition) {
+    }
+    playPos(newPosition) {
         this.position = newPosition;
-    };
-    return piece;
-}());
-var pawn = /** @class */ (function (_super) {
-    __extends(pawn, _super);
-    function pawn() {
-        return _super !== null && _super.apply(this, arguments) || this;
     }
-    return pawn;
-}(piece));
-var bishop = /** @class */ (function (_super) {
-    __extends(bishop, _super);
-    function bishop() {
-        return _super !== null && _super.apply(this, arguments) || this;
+    getPieceMove() {
+        return this.pieceMove;
     }
-    return bishop;
-}(piece));
-var rook = /** @class */ (function (_super) {
-    __extends(rook, _super);
-    function rook() {
-        return _super !== null && _super.apply(this, arguments) || this;
+    clicked() {
+        console.log("HI !");
     }
-    return rook;
-}(piece));
-var king = /** @class */ (function (_super) {
-    __extends(king, _super);
-    function king() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    return king;
-}(piece));
-var queen = /** @class */ (function (_super) {
-    __extends(queen, _super);
-    function queen() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    return queen;
-}(piece));
-var knigth = /** @class */ (function (_super) {
-    __extends(knigth, _super);
-    function knigth() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    return knigth;
-}(piece));
+}
+class pawn extends piece {
+}
+class bishop extends piece {
+}
+class rook extends piece {
+}
+class king extends piece {
+}
+class queen extends piece {
+}
+class knigth extends piece {
+}
+class empty extends piece {
+}
+export const pieces = {
+    pawn: pawn,
+    bishop: bishop,
+    rook: rook,
+    king: king,
+    queen: queen,
+    knigth: knigth,
+    empty: empty
+};
+export function createPiece(pieceName, options) {
+    return new pieces[pieceName](options);
+}
